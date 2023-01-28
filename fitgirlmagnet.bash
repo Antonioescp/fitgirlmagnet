@@ -59,6 +59,6 @@ do
 	fi
 done
 
-MAGNET=$(curl -s ${RESULTS[$SELECTION]} | grep -Eo "magnet:\?[^\"]*")
+MAGNET=$(curl -s ${RESULTS[$SELECTION]} | grep -Eom 1 "magnet:\?[^\"]*")
 
 qbittorrent "$MAGNET" &
